@@ -1,0 +1,22 @@
+<h4>Search</h4>
+
+<%= search_form_for @search, :html => {:id => "search-form-enrollments", :class => "form-horizontal"} do |f| %>
+  <%= f.condition_fields do |c| %>
+
+  <div class="form-inline field form-group container">
+    <%= c.attribute_fields do |a| %>
+      <%= a.attribute_select( class: 'form-control input-sm' ) %>
+    <% end %>
+    <%= c.predicate_select({only: [:cont, :gteq, :lteq, :blank], compounds: false }, class: 'form-control input-sm predicate') %>
+    <%= c.value_fields do |v| %>
+      <%= v.text_field :value, class: 'form-control input-sm value-field', id: 'is_blank' %>
+    <% end %>
+    <button type="button" name="remove-filter" class="remove_fields btn btn-danger btn-xs glyphicon glyphicon-remove" id="remove"></button>
+  </div>
+
+  <% end %>
+
+<!-- link to add fields here -->
+
+  <%= f.submit "Search", class: 'btn btn-success btn-sm', id: 'search-btn' %>
+<% end %>

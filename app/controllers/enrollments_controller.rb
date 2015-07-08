@@ -1,5 +1,6 @@
 class EnrollmentsController < ApplicationController
   def index
-    @enrollments = Enrollment.all
+    @search = Enrollment.search(params[:q])
+    @enrollments = @search.result
   end
 end
