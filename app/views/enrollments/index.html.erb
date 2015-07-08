@@ -1,0 +1,9 @@
+<h1>Enrollments</h1>
+
+<% if @enrollments.any? %>
+  <ul>
+    <% @enrollments.each do |enrollment| %>
+      <li><%= enrollment.subjId %></li>
+    <% end %>
+  </ul>
+<% end %>
