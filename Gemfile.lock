@@ -38,8 +38,16 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.8)
     arel (6.0.0)
+    autoprefixer-rails (5.2.1)
+      execjs
+      json
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.5.1)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.3.0)
+    bootswatch-rails (3.2.4)
+      railties (>= 3.1)
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
@@ -116,8 +124,6 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
-    rename (1.0.2)
-      rails (>= 3.0.0)
     rspec-core (3.2.2)
       rspec-support (~> 3.2.0)
     rspec-expectations (3.2.0)
@@ -175,6 +181,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass (~> 3.3.5)
+  bootswatch-rails
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
@@ -184,7 +192,6 @@ DEPENDENCIES
   pry
   pry-nav
   rails (= 4.2.1)
-  rename
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
