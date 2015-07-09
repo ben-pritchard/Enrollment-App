@@ -11,38 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150709211201) do
 
-  create_table "eligibility_states", id: false, force: :cascade do |t|
+  create_table "eligibility_states", force: :cascade do |t|
     t.integer "StateId", limit: 1,  null: false
     t.string  "Title",   limit: 30
   end
 
-  create_table "eligibility_sub_states", id: false, force: :cascade do |t|
+  create_table "eligibility_sub_states", force: :cascade do |t|
     t.integer "StateId",    limit: 1,  null: false
     t.integer "SubStateId", limit: 1,  null: false
     t.string  "Title",      limit: 30
   end
 
   create_table "enrollment", id: false, force: :cascade do |t|
-    t.integer  "status",      limit: 1, default: 0
-    t.integer  "projId",      limit: 2, default: 0, null: false
-    t.integer  "subjId",      limit: 4,             null: false
-    t.integer  "homeId",      limit: 4,             null: false
+    t.integer  "status",                   limit: 1, default: 0
+    t.integer  "projId",                   limit: 2, default: 0, null: false
+    t.integer  "subjId",                   limit: 4,             null: false
+    t.integer  "homeId",                   limit: 4,             null: false
     t.datetime "startDate"
-    t.integer  "RAId",        limit: 4, default: 0
-    t.integer  "eligibility", limit: 1, default: 0, null: false
-    t.integer  "secondary",   limit: 1, default: 0, null: false
-    t.integer  "idx",         limit: 4, default: 0, null: false
+    t.integer  "RAId",                     limit: 4, default: 0
+    t.integer  "eligibility",              limit: 1, default: 0, null: false
+    t.integer  "secondary",                limit: 1, default: 0, null: false
+    t.integer  "idx",                      limit: 4, default: 0, null: false
+    t.integer  "enrollment_state_id",      limit: 4
+    t.integer  "eligibility_state_id",     limit: 4
+    t.integer  "eligibility_sub_state_id", limit: 4
+    t.integer  "project_id",               limit: 4
   end
 
-  create_table "enrollment_states", id: false, force: :cascade do |t|
+  create_table "enrollment_states", force: :cascade do |t|
     t.integer "stateId", limit: 1,  default: 0,     null: false
     t.string  "Name",    limit: 20
     t.boolean "Display", limit: 1,  default: false
   end
 
-  create_table "project_list", id: false, force: :cascade do |t|
+  create_table "projects", force: :cascade do |t|
     t.integer "projectId",   limit: 2,  default: 0,  null: false
     t.string  "name",        limit: 15, default: "", null: false
     t.string  "description", limit: 50, default: "", null: false

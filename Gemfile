@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'bootswatch-rails'
 gem 'ransack'
+gem 'jquery-turbolinks'
+gem 'bootstrap-kaminari-views'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

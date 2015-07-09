@@ -1,0 +1,4 @@
+add_column :enrollment, :enrollment_state_id, :integer
+add_column :enrollment, :eligibility_state_id, :integer
+add_column :enrollment, :eligibility_sub_state_id, :integer
+add_column :enrollment, :project_list_id, :integer

@@ -1,0 +1,22 @@
+<h1>New Enrollment Information:</h1>
+
+<%= form_for @enrollment do |f| %>
+  <div class="form-group">
+    <%= f.label :status, "Status" %>
+    <%= f.collection_select(:enrollment, :enrollment_state_id, :to_s, :humanize) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :projId, "Project ID" %>
+    <%= f.collection_select(:projId, Enrollment::PROJECTS, :to_s, :humanize) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :subjId, "Subect ID" %>
+    <%= f.text_field :subjId %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

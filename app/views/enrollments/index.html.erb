@@ -1,5 +1,9 @@
 <%= render partial: "search" %>
 
+<br>
+
+<%= link_to "New Enrollment", new_enrollment_path, class: "btn btn-primary" %>
+
 <h1>Enrollments</h1>
 
 <%= render partial: "enrollments", locals: {enrollments: @enrollments} %>
