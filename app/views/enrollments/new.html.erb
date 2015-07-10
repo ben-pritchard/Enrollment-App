@@ -17,6 +17,26 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :homeId, "Home ID" %>
+    <%= f.text_field :homeId %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :eligibility, "eligibility" %>
+    <%= f.text_field :eligibility %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :secondary, "secondary" %>
+    <%= f.text_field :secondary %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :idx, "idx" %>
+    <%= f.text_field :idx %>
+  </div>
+
+  <div class="form-group">
     <%= f.submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>
