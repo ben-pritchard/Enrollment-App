@@ -3,7 +3,7 @@
     <thead>
       <tr>
         <th><%= sort_link(@search, :status, 'Status') %></th>
-        <th><%= sort_link(@search, :projId, 'Project ID') %></th>
+        <th><%= sort_link(@search, :project_id, 'Project ID') %></th>
         <th><%= sort_link(@search, :subjId, 'Subject ID') %></th>
         <th><%= sort_link(@search, :homeId, 'Home ID') %></th>
         <th><%= sort_link(@search, :startDate, 'Start Date') %></th>
@@ -17,7 +17,7 @@
       <% enrollments.each do |enrollment|%>
         <tr>
           <td><%= enrollment.status %></td>
-          <td><%= enrollment.projId %></td>
+          <td><%= enrollment.project_id %></td>
           <td><%= enrollment.subjId %></td>
           <td><%= enrollment.homeId %></td>
           <td><%= enrollment.startDate %></td>

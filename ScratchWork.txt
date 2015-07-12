@@ -1,4 +1,20 @@
-add_column :enrollment, :enrollment_state_id, :integer
-add_column :enrollment, :eligibility_state_id, :integer
-add_column :enrollment, :eligibility_sub_state_id, :integer
-add_column :enrollment, :project_list_id, :integer
+
+// Why doesn't this migration work? FIGURED IT OUT ON STACK OVERFLOW!
+def change
+  Enrollment.connection.schema_cache.clear!
+  Enrollment.reset_column_information
+  Enrollment.all.each do |e|
+    e.update_attribute(enrollment_state_id: EnrollmentState.find_by(stateId: e.status).id)
+  end
+end
+
+rake aborted!
+StandardError: An error has occurred, all later migrations canceled:
+
+Mysql2::Error: Table 'enrollment_development.enrollment' doesn't exist: ALTER TABLE `enrollment` ADD `id` int(11) auto_increment PRIMARY KEY/Users/ben/Desktop/enrollment_app/db/migrate/20150709205258_add_primary_keys.rb:7:in `change'
+ActiveRecord::StatementInvalid: Mysql2::Error: Table 'enrollment_development.enrollment' doesn't exist: ALTER TABLE `enrollment` ADD `id` int(11) auto_increment PRIMARY KEY
+/Users/ben/Desktop/enrollment_app/db/migrate/20150709205258_add_primary_keys.rb:7:in `change'
+Mysql2::Error: Table 'enrollment_development.enrollment' doesn't exist
+/Users/ben/Desktop/enrollment_app/db/migrate/20150709205258_add_primary_keys.rb:7:in `change'
+Tasks: TOP => db:migrate
+(See full trace by running task with --trace)
