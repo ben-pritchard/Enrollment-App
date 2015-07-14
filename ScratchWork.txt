@@ -1,3 +1,6 @@
+// Left off:
+Migrations for elibility and project associations
+
 
 // Why doesn't this migration work? FIGURED IT OUT ON STACK OVERFLOW!
 def change
