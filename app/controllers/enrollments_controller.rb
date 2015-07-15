@@ -11,6 +11,7 @@ class EnrollmentsController < ApplicationController
 
   def create
     @enrollment = Enrollment.new(enrollment_params)
+binding.pry
     respond_to do |format|
       if @enrollment.save
         format.html { redirect_to enrollments_path, notice: 'Enrollment was successfully created.' }
@@ -27,6 +28,6 @@ class EnrollmentsController < ApplicationController
   private
 
   def enrollment_params
-    params.require(:enrollment).permit(:subjId, :enrollment_state_id, :project_id, :homeId, :eligbility, :secondary, :idx)
+    params.require(:enrollment).permit(:subjId, :enrollment_state_id, :project_id, :homeId, :eligibility_state_id, :secondary, :idx)
   end
 end
