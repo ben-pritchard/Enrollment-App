@@ -19,9 +19,10 @@ ActiveRecord::Schema.define(version: 20150712025504) do
   end
 
   create_table "eligibility_sub_states", force: :cascade do |t|
-    t.integer "StateId",    limit: 1,  null: false
-    t.integer "SubStateId", limit: 1,  null: false
-    t.string  "Title",      limit: 30
+    t.integer "StateId",              limit: 1,  null: false
+    t.integer "SubStateId",           limit: 1,  null: false
+    t.string  "Title",                limit: 30
+    t.integer "eligibility_state_id", limit: 4
   end
 
   create_table "enrollment_states", force: :cascade do |t|
@@ -31,15 +32,15 @@ ActiveRecord::Schema.define(version: 20150712025504) do
   end
 
   create_table "enrollments", force: :cascade do |t|
-    t.integer  "subjId",               limit: 4,             null: false
-    t.integer  "homeId",               limit: 4,             null: false
+    t.integer  "subjId",                   limit: 4,             null: false
+    t.integer  "homeId",                   limit: 4,             null: false
     t.datetime "startDate"
-    t.integer  "RAId",                 limit: 4, default: 0
-    t.integer  "secondary",            limit: 1, default: 0, null: false
-    t.integer  "idx",                  limit: 4, default: 0, null: false
-    t.integer  "enrollment_state_id",  limit: 4
-    t.integer  "eligibility_state_id", limit: 4
-    t.integer  "project_id",           limit: 4
+    t.integer  "RAId",                     limit: 4, default: 0
+    t.integer  "idx",                      limit: 4, default: 0, null: false
+    t.integer  "enrollment_state_id",      limit: 4
+    t.integer  "eligibility_state_id",     limit: 4
+    t.integer  "eligibility_sub_state_id", limit: 4
+    t.integer  "project_id",               limit: 4
   end
 
   create_table "projects", force: :cascade do |t|

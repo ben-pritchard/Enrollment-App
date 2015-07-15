@@ -9,7 +9,7 @@
         <th><%= sort_link(@search, :startDate, 'Start Date') %></th>
         <th><%= sort_link(@search, :RAId, 'RA ID') %></th>
         <th><%= sort_link(@search, :eligibility_state_id, 'Eligibility') %></th>
-        <th><%= sort_link(@search, :secondary, 'Secondary') %></th>
+        <th><%= sort_link(@search, :eligibility_sub_state_id, 'Secondary') %></th>
         <th><%= sort_link(@search, :idx, 'Index') %></th>
       </tr>
     </thead>
@@ -23,7 +23,7 @@
           <td><%= enrollment.startDate %></td>
           <td><%= enrollment.RAId %></td>
           <td><%= enrollment.eligibility_state.StateId %></td>
-          <td><%= enrollment.secondary %></td>
+          <td><%= enrollment.eligibility_sub_state.SubStateId %></td>
           <td><%= enrollment.idx %></td>
         </tr>
       <% end %>

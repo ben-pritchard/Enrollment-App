@@ -27,13 +27,13 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :secondary, "secondary" %>
-    <%= f.text_field :secondary %>
+    <%= f.label :eligibility_sub_state_id, "Secondary" %>
+    <%= f.grouped_collection_select(:eligibility_sub_state_id, EligibilityState.all, :eligibility_sub_states, :Title, :id, :Title) %>
   </div>
 
   <div class="form-group">
-    <%= f.label :idx, "idx" %>
-    <%= f.text_field :idx %>
+    <%= f.label :RAId, "RAId" %>
+    <%= f.text_field :RAId %>
   </div>
 
   <div class="form-group">
