@@ -28,5 +28,9 @@
         </tr>
       <% end %>
     </tbody>
+    <tfoot>
+      <tr><th colspan="10"><%= page_entries_info enrollments %></tr>
+      <tr><th colspan="10"><%= paginate enrollments, :theme => 'twitter-bootstrap-3' %></tr>
+    </tfoot>
   </table>
 </div>

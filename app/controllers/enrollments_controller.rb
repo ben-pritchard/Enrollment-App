@@ -1,7 +1,7 @@
 class EnrollmentsController < ApplicationController
   def index
     @search = Enrollment.search(params[:q])
-    @enrollments = @search.result
+    @enrollments = @search.result.page(params[:page])
     @search.build_condition
   end
 
