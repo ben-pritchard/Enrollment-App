@@ -1,3 +1,5 @@
+// Make eligibility sub state drop down dynamic on New Enrollment form
+
 $(function() {
   $('#enrollment_eligibility_sub_state_id').parent().hide();
   var sub_states = $('#enrollment_eligibility_sub_state_id').html();
@@ -8,11 +10,11 @@ $(function() {
     if (options) {
       $('#enrollment_eligibility_sub_state_id').html(options);
       $('#enrollment_eligibility_sub_state_id').parent().show();
-      return e.preventDefault;
+      return e.preventDefault();
     } else {
       $('#enrollment_eligibility_sub_state_id').empty();
       $('#enrollment_eligibility_sub_state_id').parent().hide();
-      return e.preventDefault;
+      return e.preventDefault();
     }
   });
 });
