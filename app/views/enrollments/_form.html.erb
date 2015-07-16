@@ -2,28 +2,23 @@
 
 <%= form_for @enrollment do |f| %>
   <div class="form-group">
-    <%= f.label :enrollment_state_id, "Status" %>
-    <%= f.collection_select(:enrollment_state_id, EnrollmentState.states, :id, :Name) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :project_id, "Project" %>
-    <%= f.collection_select(:project_id, Project.all, :id, :name) %>
-  </div>
-
-  <div class="form-group">
     <%= f.label :subjId, "Subject ID" %>
     <%= f.text_field :subjId %>
   </div>
 
   <div class="form-group">
-    <%= f.label :startDate, "Start Date" %>
-    <%= f.text_field :startDate %>
+    <%= f.label :homeId, "Home ID" %>
+    <%= f.text_field :homeId %>
   </div>
 
   <div class="form-group">
-    <%= f.label :homeId, "Home ID" %>
-    <%= f.text_field :homeId %>
+    <%= f.label :RAId, "RAId" %>
+    <%= f.text_field :RAId %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :enrollment_state_id, "Status" %>
+    <%= f.collection_select(:enrollment_state_id, EnrollmentState.states, :id, :Name) %>
   </div>
 
   <div class="form-group">
@@ -37,8 +32,13 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :RAId, "RAId" %>
-    <%= f.text_field :RAId %>
+    <%= f.label :project_id, "Project" %>
+    <%= f.collection_select(:project_id, Project.all, :id, :name) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :startDate, "Start Date" %>
+    <%= f.text_field :startDate %>
   </div>
 
   <div class="form-group">

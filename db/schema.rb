@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150712025504) do
+ActiveRecord::Schema.define(version: 20150716190324) do
 
   create_table "eligibility_states", force: :cascade do |t|
     t.integer "StateId", limit: 1,  null: false
@@ -42,6 +42,23 @@ ActiveRecord::Schema.define(version: 20150712025504) do
     t.integer  "eligibility_sub_state_id", limit: 4
     t.integer  "project_id",               limit: 4
   end
+
+  create_table "espinita_audits", force: :cascade do |t|
+    t.integer  "auditable_id",    limit: 4
+    t.string   "auditable_type",  limit: 255
+    t.integer  "user_id",         limit: 4
+    t.string   "user_type",       limit: 255
+    t.text     "audited_changes", limit: 65535
+    t.string   "comment",         limit: 255
+    t.integer  "version",         limit: 4
+    t.string   "action",          limit: 255
+    t.string   "remote_address",  limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "espinita_audits", ["auditable_type", "auditable_id"], name: "index_espinita_audits_on_auditable_type_and_auditable_id", using: :btree
+  add_index "espinita_audits", ["user_type", "user_id"], name: "index_espinita_audits_on_user_type_and_user_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.integer "projectId",   limit: 2,  default: 0,  null: false

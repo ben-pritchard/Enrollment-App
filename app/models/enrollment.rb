@@ -1,4 +1,6 @@
 class Enrollment < ActiveRecord::Base
+  auditable only: [:enrollment_state_id], on: [:create, :update]
+
   belongs_to :enrollment_state
   belongs_to :project
   belongs_to :eligibility_state
