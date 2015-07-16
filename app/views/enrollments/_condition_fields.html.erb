@@ -2,7 +2,7 @@
   <%= f.attribute_fields do |a| %>
     <%= a.attribute_select( class: 'form-control input-sm' ) %>
   <% end %>
-  <%= f.predicate_select({only: [:cont, :gteq, :lteq, :blank], compounds: false }, class: 'form-control input-sm predicate') %>
+  <%= f.predicate_select({only: [:cont, :eq, :gteq, :lteq, :blank], compounds: false }, class: 'form-control input-sm predicate') %>
   <%= f.value_fields do |v| %>
     <%= v.text_field :value, class: 'form-control input-sm value-field', id: 'is_blank' %>
   <% end %>

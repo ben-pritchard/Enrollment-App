@@ -9,11 +9,11 @@ $(function() {
     var options = $(sub_states).filter("optgroup[label=" + state + "]").html()
     if (options) {
       $('#enrollment_eligibility_sub_state_id').html(options);
-      $('#enrollment_eligibility_sub_state_id').parent().show();
+      $('#enrollment_eligibility_sub_state_id').parent().show("fast");
       return e.preventDefault();
     } else {
       $('#enrollment_eligibility_sub_state_id').empty();
-      $('#enrollment_eligibility_sub_state_id').parent().hide();
+      $('#enrollment_eligibility_sub_state_id').parent().hide("fast");
       return e.preventDefault();
     }
   });

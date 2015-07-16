@@ -2,29 +2,29 @@
   <table class="table table-striped table-condensed tablesorter">
     <thead>
       <tr>
-        <th><%= sort_link(@search, :enrollment_status_id, 'Status') %></th>
-        <th><%= sort_link(@search, :project_id, 'Project ID') %></th>
+        <th><%= sort_link(@search, :id, 'Index') %></th>
         <th><%= sort_link(@search, :subjId, 'Subject ID') %></th>
         <th><%= sort_link(@search, :homeId, 'Home ID') %></th>
-        <th><%= sort_link(@search, :startDate, 'Start Date') %></th>
         <th><%= sort_link(@search, :RAId, 'RA ID') %></th>
+        <th><%= sort_link(@search, :enrollment_status_id, 'Status') %></th>
         <th><%= sort_link(@search, :eligibility_state_id, 'Eligibility') %></th>
         <th><%= sort_link(@search, :eligibility_sub_state_id, 'Secondary') %></th>
-        <th><%= sort_link(@search, :idx, 'Index') %></th>
+        <th><%= sort_link(@search, :startDate, 'Start Date') %></th>
+        <th><%= sort_link(@search, :project_id, 'Project Name') %></th>
       </tr>
     </thead>
     <tbody>
       <% enrollments.each do |enrollment|%>
         <tr>
-          <td><%= enrollment.enrollment_state.stateId %></td>
-          <td><%= enrollment.project.projectId %></td>
-          <td><%= enrollment.subjId %></td>
+          <td><%= enrollment.id %></td>
+          <td><%= link_to enrollment.subjId, enrollment_path(enrollment) %></td>
           <td><%= enrollment.homeId %></td>
-          <td><%= enrollment.startDate %></td>
           <td><%= enrollment.RAId %></td>
-          <td><%= enrollment.eligibility_state.StateId %></td>
-          <td><%= enrollment.eligibility_sub_state.SubStateId %></td>
-          <td><%= enrollment.idx %></td>
+          <td><%= enrollment.enrollment_state.Name %></td>
+          <td><%= enrollment.eligibility_state.Title %></td>
+          <td><%= enrollment.eligibility_sub_state.Title %></td>
+          <td><%= enrollment.startDate %></td>
+          <td><%= enrollment.project.name %></td>
         </tr>
       <% end %>
     </tbody>
