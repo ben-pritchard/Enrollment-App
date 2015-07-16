@@ -1,7 +1,7 @@
 <%= form_for @enrollment do |f| %>
   <div class="form-group">
     <%= f.label :enrollment_state_id, "Status" %>
-    <%= f.collection_select(:enrollment_state_id, EnrollmentState.all, :id, :Name) %>
+    <%= f.collection_select(:enrollment_state_id, EnrollmentState.states, :id, :Name) %>
   </div>
 
   <div class="form-group">
@@ -40,6 +40,6 @@
   </div>
 
   <div class="form-group">
-    <%= f.submit "Submit", class: "btn btn-primary" %> <span><%= link_to("Cancel", cancel) %>
+    <%= f.submit "Submit", class: "btn btn-primary" %> &nbsp <span><%= link_to("Cancel", cancel) %>
   </div>
 <% end %>
