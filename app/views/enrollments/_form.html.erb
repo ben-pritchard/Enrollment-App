@@ -1,0 +1,45 @@
+<%= form_for @enrollment do |f| %>
+  <div class="form-group">
+    <%= f.label :enrollment_state_id, "Status" %>
+    <%= f.collection_select(:enrollment_state_id, EnrollmentState.all, :id, :Name) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :project_id, "Project" %>
+    <%= f.collection_select(:project_id, Project.all, :id, :name) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :subjId, "Subject ID" %>
+    <%= f.text_field :subjId %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :startDate, "Start Date" %>
+    <%= f.text_field :startDate %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :homeId, "Home ID" %>
+    <%= f.text_field :homeId %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :eligibility_state_id, "Eligibility" %>
+    <%= f.collection_select(:eligibility_state_id, EligibilityState.all, :id, :Title) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :eligibility_sub_state_id, "Secondary" %>
+    <%= f.grouped_collection_select(:eligibility_sub_state_id, EligibilityState.all, :eligibility_sub_states, :Title, :id, :Title) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :RAId, "RAId" %>
+    <%= f.text_field :RAId %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Submit", class: "btn btn-primary" %> <span><%= link_to("Cancel", cancel) %>
+  </div>
+<% end %>

@@ -1,12 +1,13 @@
 <div class="row">
   <h1>Enrollment Information:</h1>
   <div class="row show-grid well">
-    <h4><small><%= label_tag "Status" %></small><br><%= @enrollment.enrollment_state_id.Name %></h4>
+    <h4><small><%= label_tag "Status" %></small><br><%= @enrollment.enrollment_state.Name %></h4>
   </div>
   <div class="row show-grid well">
-    <h4><small><%= label_tag "Project" %></small><br><%= @enrollment.project_id.name %></h4>
+    <h4><small><%= label_tag "Project" %></small><br><%= @enrollment.project.name %></h4>
   </div>
   <div class="row show-grid well">
     <h4><small><%= label_tag "Status" %></small><br><%= @enrollment.subjId %></h4>
   </div>
+  <%= link_to "Edit", edit_enrollment_path, class: "btn btn-primary" %>
 </div>
