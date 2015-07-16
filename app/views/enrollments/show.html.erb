@@ -1,13 +1,32 @@
 <div class="row">
   <h1>Enrollment Information:</h1>
-  <div class="row show-grid well">
-    <h4><small><%= label_tag "Status" %></small><br><%= @enrollment.enrollment_state.Name %></h4>
+  <div class="col-md-6">
+    <div class="row show-grid well">
+      <h4><small><%= label_tag "Subject ID" %></small><br><%= @enrollment.subjId %></h4>
+    </div>
+    <div class="row show-grid well">
+      <h4><small><%= label_tag "Status" %></small><br><%= @enrollment.enrollment_state.Name %></h4>
+    </div>
+    <div class="row show-grid well">
+      <h4><small><%= label_tag "Project" %></small><br><%= @enrollment.project.name %></h4>
+    </div>
+    <div class="row show-grid well">
+      <h4><small><%= label_tag "Home ID" %></small><br><%= @enrollment.homeId %></h4>
+    </div>
   </div>
-  <div class="row show-grid well">
-    <h4><small><%= label_tag "Project" %></small><br><%= @enrollment.project.name %></h4>
+  <div class="col-md-6">
+    <div class="row show-grid well">
+      <h4><small><%= label_tag "Start Date" %></small><br><%= @enrollment.startDate %></h4>
+    </div>
+    <div class="row show-grid well">
+      <h4><small><%= label_tag "Eligibility State" %></small><br><%= @enrollment.eligibility_state.Title %></h4>
+    </div>
+    <div class="row show-grid well">
+      <h4><small><%= label_tag "Eligibility Sub State" %></small><br><%= @enrollment.eligibility_sub_state.Title %></h4>
+    </div>
   </div>
-  <div class="row show-grid well">
-    <h4><small><%= label_tag "Status" %></small><br><%= @enrollment.subjId %></h4>
-  </div>
-  <%= link_to "Edit", edit_enrollment_path, class: "btn btn-primary" %>
 </div>
+
+  <%= link_to "Edit", edit_enrollment_path, class: "btn btn-primary" %>
+
+  <%= link_to  "Back to Index", enrollments_path, class: "btn btn-primary" %>
