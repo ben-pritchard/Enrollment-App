@@ -20,12 +20,28 @@ class EnrollmentsController < ApplicationController
     end
   end
 
+  def show
+    @enrollment = Enrollment.find(params[:id])
+  end
+
   def edit
     @enrollment = Enrollment.find(params[:id])
   end
 
-  def show
+  def update
     @enrollment = Enrollment.find(params[:id])
+    if @enrollment.update(enrollment_params)
+      flash[:notice] = "Enrollment successfully updated!"
+      redirect_to enrollment_path(@enrollment)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @enrollment = Enrollment.find(params[:id])
+    @enrollment.destroy
+    redirect_to enrollments_path
   end
 
   private

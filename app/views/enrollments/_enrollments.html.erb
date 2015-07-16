@@ -9,8 +9,8 @@
         <th><%= sort_link(@search, :enrollment_status_id, 'Status') %></th>
         <th><%= sort_link(@search, :eligibility_state_id, 'Eligibility') %></th>
         <th><%= sort_link(@search, :eligibility_sub_state_id, 'Secondary') %></th>
-        <th><%= sort_link(@search, :startDate, 'Start Date') %></th>
         <th><%= sort_link(@search, :project_id, 'Project Name') %></th>
+        <th><%= sort_link(@search, :startDate, 'Start Date') %></th>
       </tr>
     </thead>
     <tbody>
@@ -23,8 +23,8 @@
           <td><%= enrollment.enrollment_state.Name %></td>
           <td><%= enrollment.eligibility_state.Title %></td>
           <td><%= enrollment.eligibility_sub_state.Title %></td>
-          <td><%= enrollment.startDate %></td>
           <td><%= enrollment.project.name %></td>
+          <td><%= enrollment.startDate %></td>
         </tr>
       <% end %>
     </tbody>

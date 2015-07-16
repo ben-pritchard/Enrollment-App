@@ -1,5 +1,7 @@
 <% if object.errors.any? %>
+  <ul>
   <% object.errors.full_messages.each do |message| %>
-    <% flash[:alert] = message %>
+    <li><span class="list-group-item-danger"><%= message %></span></li>
   <% end %>
+  </ul>
 <% end %>

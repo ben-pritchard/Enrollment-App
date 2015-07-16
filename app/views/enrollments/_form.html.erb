@@ -1,3 +1,5 @@
+<%= render partial: "layouts/errors", locals: {object: @enrollment} %>
+
 <%= form_for @enrollment do |f| %>
   <div class="form-group">
     <%= f.label :enrollment_state_id, "Status" %>
