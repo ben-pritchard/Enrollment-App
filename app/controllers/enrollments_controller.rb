@@ -27,6 +27,6 @@ class EnrollmentsController < ApplicationController
   private
 
   def enrollment_params
-    params.require(:enrollment).permit(:subjId, :enrollment_state_id, :project_id, :homeId, :eligibility_state_id, :eligibility_sub_state_id)
+    params.require(:enrollment).permit(:subjId, :startDate, :enrollment_state_id, :project_id, :homeId, :eligibility_state_id, :eligibility_sub_state_id, :RAId)
   end
 end
