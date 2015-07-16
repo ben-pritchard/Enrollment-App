@@ -1,3 +1,12 @@
+<% @enrollment.get_audits.each_with_index do |audit, index|%>
+  <tr>
+    <td><%= audit.updated_at %></td>
+    <td>Updated</td>
+    <td><%= EnrollmentState.find(audit.audited_changes.first[1][1]).Name %></td>
+  </tr>
+<% end %>
+
+
 // Left off:
 Migrations for elibility and project associations
 

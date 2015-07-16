@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150716190324) do
+ActiveRecord::Schema.define(version: 20150712025504) do
 
   create_table "eligibility_states", force: :cascade do |t|
     t.integer "StateId", limit: 1,  null: false
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20150716190324) do
     t.integer  "homeId",                   limit: 4,             null: false
     t.datetime "startDate"
     t.integer  "RAId",                     limit: 4, default: 0
-    t.integer  "idx",                      limit: 4, default: 0, null: false
     t.integer  "enrollment_state_id",      limit: 4
     t.integer  "eligibility_state_id",     limit: 4
     t.integer  "eligibility_sub_state_id", limit: 4
