@@ -10,6 +10,9 @@ class Enrollment < ActiveRecord::Base
   validates :homeId, presence: true, numericality: { only_integer: true }
   validates :RAId, presence: true, numericality: { only_integer: true }
   validates :startDate, presence: true
+  validates :enrollment_state, presence: true
+  validates :eligibility_state, presence: true
+  validates :project, presence: true
 
   scope :active, -> { where(enrollment_state_id: 9) }
   scope :screening, -> { where(enrollment_state_id: 3) }

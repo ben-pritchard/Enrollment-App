@@ -25,7 +25,7 @@ class EnrollmentsController < ApplicationController
     @enrollment = Enrollment.new(enrollment_params)
     respond_to do |format|
       if @enrollment.save
-        format.html { redirect_to enrollments_path, notice: 'Enrollment was successfully created.' }
+        format.html { redirect_to enrollments_path, notice: 'Enrollment successfully created!' }
       else
         format.html { render :new }
       end
@@ -53,6 +53,7 @@ class EnrollmentsController < ApplicationController
   def destroy
     @enrollment = Enrollment.find(params[:id])
     @enrollment.destroy
+    flash[:notice] = "Enrollment successfully deleted!"
     redirect_to enrollments_path
   end
 
