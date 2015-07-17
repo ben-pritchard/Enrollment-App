@@ -5,6 +5,18 @@ class EnrollmentsController < ApplicationController
     @search.build_condition
   end
 
+  def active
+    @search = Enrollment.search(params[:q])
+    @enrollments = @search.result.active.page(params[:page])
+    @search.build_condition
+  end
+
+  def screening
+    @search = Enrollment.search(params[:q])
+    @enrollments = @search.result.screening.page(params[:page])
+    @search.build_condition
+  end
+
   def new
     @enrollment = Enrollment.new
   end

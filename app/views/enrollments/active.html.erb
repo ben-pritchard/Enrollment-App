@@ -1,0 +1,7 @@
+<%= render partial: "search_active" %>
+
+<br>
+
+<h1>Active Enrollments</h1>
+
+<%= render partial: "enrollments", locals: {enrollments: @enrollments, tab: "active"} %>

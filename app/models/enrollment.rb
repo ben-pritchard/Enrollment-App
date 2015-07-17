@@ -9,6 +9,9 @@ class Enrollment < ActiveRecord::Base
   validates :subjId, presence: true, numericality: { only_integer: true }
   validates :homeId, presence: true, numericality: { only_integer: true }
 
+  scope :active, -> { where(enrollment_state_id: 9) }
+  scope :screening, -> { where(enrollment_state_id: 3) }
+
   def get_initial_status
     # The Espinita gem (which tracks updates to enrollment status) counts the
     # initial update that took place in the migration as the first update. Thus

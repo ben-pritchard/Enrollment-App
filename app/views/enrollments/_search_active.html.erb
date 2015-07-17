@@ -1,0 +1,13 @@
+<div class="well">
+  <h4>Search</h4>
+
+  <%= search_form_for @search, url: active_path, :html => {:id => "search-form-enrollments", :class => "form-horizontal"} do |f| %>
+    <%= f.condition_fields do |c| %>
+      <%= render "condition_fields", f: c %>
+    <% end %>
+
+    <%= link_to_add_fields "Add Filter", f, :condition %>
+
+    <%= f.submit "Search", class: 'btn btn-success btn-sm', id: 'search-btn' %>
+  <% end %>
+</div>
