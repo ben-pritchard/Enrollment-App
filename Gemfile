@@ -29,6 +29,11 @@ group :development, :test do
   gem 'pry'
   gem 'pry-nav'
   gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'newrelic_rpm'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
 group :production do
