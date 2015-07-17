@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/maxlapshin/mysql2postgres.git
+  revision: 94b1117e6c2c909fcb5a2b11f821372b0deba730
+  specs:
+    mysqltopostgres (0.2.20)
+      activerecord (>= 3.2.6)
+      mysql-pr (>= 2.9.10)
+      postgres-pr (= 0.6.3)
+      test-unit (>= 2.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -100,11 +110,15 @@ GEM
     mini_portile (0.6.2)
     minitest (5.7.0)
     multi_json (1.11.1)
+    mysql-pr (2.9.11)
     mysql2 (0.3.18)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    pg (0.18.1)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
+    postgres-pr (0.6.3)
+    power_assert (0.2.3)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -133,6 +147,11 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.3)
     railties (4.2.1)
       actionpack (= 4.2.1)
       activesupport (= 4.2.1)
@@ -184,6 +203,8 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    test-unit (3.1.2)
+      power_assert
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -217,9 +238,12 @@ DEPENDENCIES
   kaminari
   launchy
   mysql2
+  mysqltopostgres!
+  pg
   pry
   pry-nav
   rails (= 4.2.1)
+  rails_12factor
   ransack
   rspec-rails
   sass-rails (~> 5.0)
