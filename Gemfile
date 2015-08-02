@@ -18,7 +18,6 @@ gem 'bootstrap-kaminari-views'
 gem 'jquery-ui-rails'
 gem 'espinita'
 gem 'mysqltopostgres', git: "https://github.com/maxlapshin/mysql2postgres.git"
-gem 'pg'
 
 group :development, :test do
   gem 'byebug'
