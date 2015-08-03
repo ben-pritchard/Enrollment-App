@@ -49,7 +49,6 @@ test:
 #
 production:
   <<: *default
-  host: 127.0.0.1
   database: enrollment_production
   url: <%= ENV['CLEARDB_DATABASE_URL'] %>
   username: <%= ENV['CLEARDB_DATABASE_USERNAME'] %>
