@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-unless Rails.env.production?
+# unless Rails.env.production?
   connection = ActiveRecord::Base.connection
   connection.tables.each do |table|
     connection.execute("TRUNCATE #{table}")# unless table == "schema_migrations"
@@ -21,4 +21,4 @@ unless Rails.env.production?
       connection.execute(statement)
     end
   end
-end
+# end
