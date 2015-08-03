@@ -51,7 +51,9 @@ test:
 #
 production:
   <<: *default
-  database: enrollment
+  database: heroku_74f570faead6d61
   url: <%= ENV['CLEARDB_DATABASE_URL'] %>
   username: <%= ENV['CLEARDB_DATABASE_USERNAME'] %>
   password: <%= ENV['CLEARDB_DATABASE_PASSWORD'] %>
+  shost: localhost
+  host:
