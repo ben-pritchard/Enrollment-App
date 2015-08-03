@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `enrollment` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `enrollment`;
+CREATE DATABASE  IF NOT EXISTS `heroku_74f570faead6d61` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `heroku_74f570faead6d61`;
 -- MySQL dump 10.13  Distrib 5.6.17, for Win64 (x86_64)
 --
 -- Host: mysql1.bme.ohsu.edu    Database: enrollment
