@@ -15,7 +15,7 @@ default: &default
   pool: 5
   username: root
   password:
-  # socket: /tmp/mysql.sock
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: enrollment_production
-  username: enrollment
-  password: <%= ENV['ENROLLMENT_DATABASE_PASSWORD'] %>
+  url: <%= ENV['CLEARDB_DATABASE_URL'] %>
+  username: <%= ENV['CLEARDB_DATABASE_USERNAME'] %>
+  password: <%= ENV['CLEARDB_DATABASE_PASSWORD'] %>

@@ -19,6 +19,7 @@ gem 'jquery-ui-rails'
 gem 'espinita'
 gem 'mysqltopostgres', git: "https://github.com/maxlapshin/mysql2postgres.git"
 gem 'pg'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug'
