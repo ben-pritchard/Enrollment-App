@@ -52,6 +52,6 @@ test:
 production:
   <<: *default
   database: enrollment
-  url: <%= ENV['CLEARDB_DATABASE_URL'] %>
-  username: <%= ENV['CLEARDB_DATABASE_USERNAME'] %>
-  password: <%= ENV['CLEARDB_DATABASE_PASSWORD'] %>
+  url: mysql2://bba39e3826dd72:3eb42ee3@us-cdbr-iron-east-02.cleardb.net/heroku_74f570faead6d61?reconnect=true
+  username: bba39e3826dd72
+  password: 3eb42ee3
