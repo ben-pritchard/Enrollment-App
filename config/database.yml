@@ -19,7 +19,7 @@ default: &default
 
 development:
   <<: *default
-  database: enrollment
+  database: enrollment_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: enrollment_production
+  database: enrollment
   url: <%= ENV['CLEARDB_DATABASE_URL'] %>
   username: <%= ENV['CLEARDB_DATABASE_USERNAME'] %>
   password: <%= ENV['CLEARDB_DATABASE_PASSWORD'] %>
