@@ -19,7 +19,7 @@ development:
   <<: *default
   username: root
   password:
-  database: enrollment_development
+  database: enrollment
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
