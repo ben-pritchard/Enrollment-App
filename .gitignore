@@ -12,3 +12,8 @@
 !/log/.keep
 /tmp
 .env
+config/amazon-rds-ca-cert.pem
+ClearDB CA Certificate.html
+Client Certificate Bundle.html
+Client Certificate.html
+Client Private Key.html
