@@ -1,8 +1,17 @@
-<%= render partial: "search" %>
+<div class="row">
+  <div class="col-md-8">
 
-<br>
+    <%= render partial: "search" %>
 
-<%= link_to "New Enrollment", new_enrollment_path, class: "btn btn-primary" %>
+    <br>
+
+    <%= link_to "New Enrollment", new_enrollment_path, class: "btn btn-primary" %>
+
+  </div>
+  <div class="col-md-4">
+    <%= render partial: "import_export" %>
+  </div>
+</div>
 
 <h1>Enrollments</h1>
 

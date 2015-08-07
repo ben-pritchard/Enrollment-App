@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: "enrollments#index"
   resources :enrollments
+  resources :enrollment_imports
 
   get '/active', to: 'enrollments#active'
   get '/screening', to: 'enrollments#screening'

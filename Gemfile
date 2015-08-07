@@ -20,6 +20,7 @@ gem 'espinita'
 gem 'mysqltopostgres', git: "https://github.com/maxlapshin/mysql2postgres.git"
 gem 'pg'
 gem 'dotenv-rails'
+gem 'roo'
 
 group :development, :test do
   gem 'byebug'
@@ -35,6 +36,7 @@ group :development, :test do
   gem 'newrelic_rpm'
   gem 'poltergeist'
   gem 'database_cleaner'
+  gem 'web-console', '~> 2.0'
 end
 
 group :production do
