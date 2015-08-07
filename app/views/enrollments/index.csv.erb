@@ -1,0 +1,5 @@
+<% headers = ['Index', 'Subject ID', 'Home ID', 'RA ID', 'Status', 'Eligibility', 'Secondary', 'Project Name', 'Start Date'] %>
+<%= CSV.generate_line(headers).html_safe.strip %>
+<% @enrollments.each do |enrollment| %>
+  <%= CSV.generate_line([enrollment.id, enrollment.subjId, enrollment.homeId, enrollment.RAId, EnrollmentState.find(enrollment.enrollment_state_id).Name, EligibilityState.find(enrollment.eligibility_state_id).Title, EligibilitySubState.find(enrollment.eligibility_sub_state_id).Title, Project.find(enrollment.project_id).name, enrollment.startDate]).html_safe.strip %>
+<% end %>

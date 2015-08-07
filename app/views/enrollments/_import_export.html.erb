@@ -1,4 +1,5 @@
 <div class="well">
   <h4>Import | Export</h4>
   <%= link_to "Import CSV", new_enrollment_import_path, class: "btn btn-primary btn-sm", id: "to_import" %>
+  <%= link_to "Export CSV", enrollments_path(params.merge(format: :csv)), class: 'btn btn-primary btn-sm', id: "to_csv" %>
 </div>

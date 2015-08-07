@@ -52,7 +52,7 @@ class EnrollmentImport
 
       enrollment_state = EnrollmentState.find_by(Name: hash["status"])
       enrollment.assign_attributes(enrollment_state_id: enrollment_state.id)
-binding.pry
+
       eligibility_state = EligibilityState.find_by(Title: hash["eligibility"])
       enrollment.assign_attributes(eligibility_state_id: eligibility_state.id)
 

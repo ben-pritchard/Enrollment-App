@@ -3,6 +3,14 @@ class EnrollmentsController < ApplicationController
     @search = Enrollment.search(params[:q])
     @enrollments = @search.result.page(params[:page])
     @search.build_condition
+    respond_to do |format|
+      format.html{}
+      format.csv {
+        @enrollments = @search.result
+        headers['Content-Disposition'] = "attachment; filename=enrollment-list.csv"
+        headers['Content-Type'] = 'text/csv; charset=iso-8859-1'
+      }
+    end
   end
 
   def active
