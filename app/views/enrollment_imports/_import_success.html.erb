@@ -1,0 +1,143 @@
+<h4>Status</h4>
+<div class="panel panel-success">
+  <div class="alert-success">
+    <%= pluralize(@enrollment_import.updated_enrollments.count, "enrollment") %> updated and
+    <%= pluralize(@enrollment_import.new_enrollments.count, "new enrollment") %> added!
+  </div>
+
+  <% if @enrollment_import.updated_enrollments.any? %>
+    <h3>Updated Enrollments:</h3>
+    <table class="table table-condensed table-hover">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Index</th>
+          <th>Subject ID</th>
+          <th>Home ID</th>
+          <th>RA ID</th>
+          <th>Status</th>
+          <th>Eligibility</th>
+          <th>Secondary</th>
+          <th>Project Name</th>
+          <th>Start Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @enrollment_import.updated_enrollments.each_with_index do |enrollment, index| %>
+          <% changes_array = enrollment.previous_changes.to_a %>
+          <% attributes_changed = [] %>
+          <% changes_array.each do |change| %>
+            <% attributes_changed.push(change[0]) %>
+          <% end %>
+
+          <tr class="green">
+            <td class="updated">Updated:</td>
+
+            <% if attributes_changed.include?("index") %>
+              <td class="updated"> <%= enrollment.id %> </td>
+            <% else %>
+              <td><%= @enrollment_import.original_enrollments[index].id %> </td>
+            <% end %>
+
+            <% if attributes_changed.include?("subjId") %>
+              <td class="updated"> <%= enrollment.subjId %> </td>
+            <% else %>
+              <td> <%= @enrollment_import.original_enrollments[index].subjId %> </td>
+            <% end %>
+
+            <% if attributes_changed.include?("homeId") %>
+            <td class="updated"> <%= enrollment.homeId %> </td>
+            <% else %>
+            <td> <%= @enrollment_import.original_enrollments[index].homeId %> </td>
+            <% end %>
+
+            <% if attributes_changed.include?("RAId") %>
+              <td class="updated"> <%= enrollment.RAId %> </td>
+            <% else %>
+              <td> <%= @enrollment_import.original_enrollments[index].RAId %> </td>
+            <% end %>
+
+            <% if attributes_changed.include?("enrollment_state_id") %>
+              <td class="updated"> <%= enrollment.enrollment_state.Name %> </td>
+            <% else %>
+              <td> <%= @enrollment_import.original_enrollments[index].enrollment_state.Name %> </td>
+            <% end %>
+
+            <% if attributes_changed.include?("eligibility_state_id") %>
+              <td class="updated"> <%= enrollment.eligibility_state.Title %> </td>
+            <% else %>
+              <td> <%= @enrollment_import.original_enrollments[index].eligibility_state.Title %> </td>
+            <% end %>
+
+            <% if attributes_changed.include?("eligibility_sub_state_id") %>
+              <td class="updated"> <%= enrollment.eligibility_sub_state.Title %> </td>
+            <% else %>
+              <td> <%= @enrollment_import.original_enrollments[index].eligibility_sub_state.Title %> </td>
+            <% end %>
+
+            <% if attributes_changed.include?("project_id") %>
+              <td class="updated"> <%= enrollment.project.name %> </td>
+            <% else %>
+              <td> <%= @enrollment_import.original_enrollments[index].project.name %> </td>
+            <% end %>
+
+            <% if attributes_changed.include?("startDate") %>
+              <td class="updated"> <%= enrollment.startDate %> </td>
+            <% else %>
+              <td> <%= @enrollment_import.original_enrollments[index].startDate %> </td>
+            <% end %>
+          </tr>
+
+          <tr>
+            <td class="previously">Previously:</td>
+            <td class="previously"> <%= @enrollment_import.original_enrollments[index].id %> </td>
+            <td class="previously"> <%= @enrollment_import.original_enrollments[index].subjId %> </td>
+            <td class="previously"> <%= @enrollment_import.original_enrollments[index].homeId %> </td>
+            <td class="previously"> <%= @enrollment_import.original_enrollments[index].RAId %> </td>
+            <td class="previously"> <%= @enrollment_import.original_enrollments[index].enrollment_state.Name %> </td>
+            <td class="previously"> <%= @enrollment_import.original_enrollments[index].eligibility_state.Title %> </td>
+            <td class="previously"> <%= @enrollment_import.original_enrollments[index].eligibility_sub_state.Title %> </td>
+            <td class="previously"> <%= @enrollment_import.original_enrollments[index].project.name %> </td>
+            <td class="previously"> <%= @enrollment_import.original_enrollments[index].startDate %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+
+  <% if @enrollment_import.new_enrollments.any? %>
+    <h3>Added enrollments:</h3>
+    <table class="table table-condensed table-hover">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Index</th>
+          <th>Subject ID</th>
+          <th>Home ID</th>
+          <th>RA ID</th>
+          <th>Status</th>
+          <th>Eligibility</th>
+          <th>Secondary</th>
+          <th>Project Name</th>
+          <th>Start Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @enrollment_import.new_enrollments.each_with_index do |enrollment, index| %>
+          <tr>
+            <td class="alert alert-success">Added: </td>
+            <td class="alert alert-success"> <%= enrollment.id %> </td>
+            <td class="alert alert-success"> <%= enrollment.subjId %> </td>
+            <td class="alert alert-success"> <%= enrollment.homeId %> </td>
+            <td class="alert alert-success"> <%= enrollment.RAId %> </td>
+            <td class="alert alert-success"> <%= enrollment.enrollment_state.Name %> </td>
+            <td class="alert alert-success"> <%= enrollment.eligibility_state.Title %> </td>
+            <td class="alert alert-success"> <%= enrollment.eligibility_sub_state.Title %> </td>
+            <td class="alert alert-success"> <%= enrollment.project.name %> </td>
+            <td class="alert alert-success"> <%= enrollment.startDate %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

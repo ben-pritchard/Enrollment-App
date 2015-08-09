@@ -12,3 +12,10 @@
     <%= render partial: "import_errors" %>
   <% end %>
 </div>
+
+<div class="row">
+  <% if @imported_enrollments.any? && @enrollment_import.errors.none? %>
+    <hr>
+    <%= render partial: "import_success" %>
+  <% end %>
+</div>
