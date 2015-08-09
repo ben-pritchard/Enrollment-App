@@ -1,0 +1,50 @@
+<h4>Status</h4>
+
+<div class="panel panel-danger">
+  <div class="alert-danger">
+    <%= pluralize(@enrollment_import.errors.count, "error") %> present!
+    No changes or additions have been processed.
+  </div>
+
+  <table class="table table-condensed table-hover">
+    <thead>
+      <tr>
+        <th>Row</th>
+        <th>Index</th>
+        <th>Subject ID</th>
+        <th>Home ID</th>
+        <th>RA ID</th>
+        <th>Status</th>
+        <th>Eligibility</th>
+        <th>Secondary</th>
+        <th>Project Name</th>
+        <th>Start Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @imported_enrollments.each_with_index do |enrollment, index| %>
+        <% if enrollment.errors.any? %>
+          <tr>
+            <td><%= index + 2 %></td>
+            <td><%= enrollment.try(:id) %></td>
+            <td><%= enrollment.try(:subjId) %></td>
+            <td><%= enrollment.try(:homeId) %></td>
+            <td><%= enrollment.try(:RAId) %></td>
+            <td><%= enrollment.try(:enrollment_state).try(:Name) %></td>
+            <td><%= enrollment.try(:eligibility_state).try(:Title) %></td>
+            <td><%= enrollment.try(:eligibility_sub_state).try(:Title) %></td>
+            <td><%= enrollment.try(:project).try(:name) %></td>
+            <td><%= enrollment.try(:startDate) %></td>
+          </tr>
+          <tr>
+            <td colspan="11">
+              <% enrollment.errors.full_messages.each do |msg| %>
+                <span class="list-group-item-danger"><%= msg %></span>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

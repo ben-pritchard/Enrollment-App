@@ -47,22 +47,32 @@ class EnrollmentImport
     repeat_ids = []
     (2..spreadsheet.last_row).collect do |i|
       hash = Hash[[header, spreadsheet.row(i)].transpose]
-      enrollment = Enrollment.new
+      enrollment = Enrollment.find_or_create_by(id: hash["index"])
       enrollment.assign_attributes(subjId: hash["subject_id"], homeId: hash["home_id"], startDate: hash["start_date"], RAId: hash["ra_id"])
 
       enrollment_state = EnrollmentState.find_by(Name: hash["status"])
-      enrollment.assign_attributes(enrollment_state_id: enrollment_state.id)
+      enrollment.assign_attributes(enrollment_state_id: enrollment_state.try(:id))
 
       eligibility_state = EligibilityState.find_by(Title: hash["eligibility"])
-      enrollment.assign_attributes(eligibility_state_id: eligibility_state.id)
+      enrollment.assign_attributes(eligibility_state_id: eligibility_state.try(:id))
 
       eligibility_sub_state = EligibilitySubState.find_by(Title: hash["secondary"])
-      enrollment.assign_attributes(eligibility_sub_state_id: eligibility_sub_state.id)
+      enrollment.assign_attributes(eligibility_sub_state_id: eligibility_sub_state.try(:id))
 
       project = Project.find_by(name: hash["project_name"])
-      enrollment.assign_attributes(project_id: project.id)
+      enrollment.assign_attributes(project_id: project.try(:id))
 
       enrollments << enrollment
+
+      # Keep track of updated enrollments and new enrollments
+      if Enrollment.find_by(id: hash["index"]) != nil
+        @original_enrollments.push(Enrollment.find_by(id: hash["index"]))
+        if enrollment.attributes != @original_enrollments.last.attributes
+          @updated_enrollments << enrollment
+        end
+      else
+        @new_enrollments.push(enrollment)
+      end
 
     end
     enrollments
