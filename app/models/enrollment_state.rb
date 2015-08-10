@@ -5,6 +5,10 @@ class EnrollmentState < ActiveRecord::Base
   validates :Name, presence: true
   validates :Display, presence: true
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["Name"] + _ransackers.keys
+  end
+
   def self.states
     # Ignore “Ready to Install”, “Clinician” and “Neuropsych” enrollment states
     ignore_ids = [EnrollmentState.find_by(Name: "Ready to install").id,

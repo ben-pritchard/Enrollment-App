@@ -17,7 +17,9 @@ Once you have your Ruby and Rails environments set up (which you can find detail
 
 Or check out the live site [here.](https://sheltered-eyrie-5331.herokuapp.com/active)
 
-Note: the hosted version has a couple bugs (the links in the nav bar don't work the way they should and enrollment states "Ready to Install", "Clinician", and Neuropsych" are not ignored in the dropdown menus when creating new enrollments).
+#Search Feature
+
+Simply select
 
 
 #Author

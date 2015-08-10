@@ -21,3 +21,19 @@
 
 en:
   hello: "Hello world"
+  ransack:
+    attributes:
+      enrollment:
+        subjId: Subject ID
+        homeId: Home ID
+        startDate: Start Date
+        RAId: RA ID
+        id: Index
+      enrollment_state:
+        Name: Status
+      eligibility_state:
+        Title: Eligibility
+      eligibility_sub_state:
+        Title: Secondary
+      project:
+        name: Project Name

@@ -1,6 +1,6 @@
 <div class="form-inline field form-group container">
   <%= f.attribute_fields do |a| %>
-    <%= a.attribute_select( class: 'form-control input-sm' ) %>
+    <%= a.attribute_select( {associations: [:enrollment_state, :eligibility_state, :eligibility_sub_state, :project]}, class: 'form-control input-sm' ) %>
   <% end %>
   <%= f.predicate_select({only: [:cont, :eq, :gteq, :lteq, :blank], compounds: false }, class: 'form-control input-sm predicate') %>
   <%= f.value_fields do |v| %>

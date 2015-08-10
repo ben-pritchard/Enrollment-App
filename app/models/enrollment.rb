@@ -17,6 +17,10 @@ class Enrollment < ActiveRecord::Base
   scope :active, lambda { where(enrollment_state_id: EnrollmentState.find_by(Name: "Active").id) }
   scope :screening, lambda { where(enrollment_state_id: EnrollmentState.find_by(Name: "Screening").id) }
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["id", "subjId", "homeId", "RAId", "startDate"] + _ransackers.keys
+  end
+
   def get_initial_status
     # The Espinita gem (which tracks updates to enrollment status) counts the
     # initial update that took place in the migration as the first update. Thus
