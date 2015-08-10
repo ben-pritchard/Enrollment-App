@@ -1,8 +1,14 @@
 #Description
 
-This is an app written with Ruby, Rails, and Javascript that manages a database of enrollments. Through this app you can enroll, screen, unenroll, and edit subject enrollment information. You can also see the enrollment history of the subject as well as the current enrollment.
+This is an app written with Ruby, Rails, and Javascript that manages a database of enrollment records. Through this app you can enroll, screen, unenroll, and edit enrollment records, as well as view the enrollment history of a record.
 
-Additional features I added include a search feature that allows you to filter your list of enrollments based off of certain attributes, a CSV import/export capability, pagination, and table sorting. Integration tests are also included.
+Integration tests are also included.
+
+Additional features:
+- Search feature - allows you to filter your list of enrollments based off of certain attributes
+- Export - search results will be exported to a local CSV file.
+- Import - add or update enrollment records through an import of a CSV file.
+- Table sorting, pagination, etc.
 
 #Setup Instructions
 
@@ -17,10 +23,21 @@ Once you have your Ruby and Rails environments set up (which you can find detail
 
 Or check out the live site [here.](https://sheltered-eyrie-5331.herokuapp.com/active)
 
-#Search Feature
+#Additional Features:
 
-Simply select
+###Search filter
 
+Simply select the attribute and condition you want to filter your search results on and click the "Search" button.
+
+###Exporting
+
+Click the "Export CSV" button on the main page and your search results will immediately download to a CSV file.
+
+###Importing
+
+Click the "Import CSV" button on the main page and select a file to either add or update enrollment records.
+
+NOTE: See the two sample import files found in the `public` folder.
 
 #Author
 
@@ -28,4 +45,4 @@ Ben Pritchard
 
 ben.s.pritchard@gmail.com
 
-Thanks for checking it out!
+**Thanks for checking it out!**
