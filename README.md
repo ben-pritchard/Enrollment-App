@@ -2,7 +2,7 @@
 
 This is an app written with Ruby, Rails, and Javascript that manages a database of enrollments. Through this app you can enroll, screen, unenroll, and edit subject enrollment information. You can also see the enrollment history of the subject as well as the current enrollment.
 
-Additional features I added include a search feature that allows you to filter your list of enrollments based off of certain attributes, pagination, and table sorting. Integration tests are also included.
+Additional features I added include a search feature that allows you to filter your list of enrollments based off of certain attributes, a CSV import/export capability, pagination, and table sorting. Integration tests are also included.
 
 #Setup Instructions
 
@@ -19,10 +19,11 @@ Or check out the live site [here.](https://sheltered-eyrie-5331.herokuapp.com/ac
 
 Note: the hosted version has a couple bugs (the links in the nav bar don't work the way they should and enrollment states "Ready to Install", "Clinician", and Neuropsych" are not ignored in the dropdown menus when creating new enrollments).
 
-Thanks for checking it out!
 
 #Author
 
 Ben Pritchard
 
 ben.s.pritchard@gmail.com
+
+Thanks for checking it out!

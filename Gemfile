@@ -36,7 +36,6 @@ group :development, :test do
   gem 'newrelic_rpm'
   gem 'poltergeist'
   gem 'database_cleaner'
-  gem 'web-console', '~> 2.0'
 end
 
 group :production do

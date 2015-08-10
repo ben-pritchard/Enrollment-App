@@ -14,8 +14,8 @@ class Enrollment < ActiveRecord::Base
   validates :eligibility_state, presence: true
   validates :project, presence: true
 
-  scope :active, lambda { where(enrollment_state_id: 9) }
-  scope :screening, lambda { where(enrollment_state_id: 3) }
+  scope :active, lambda { where(enrollment_state_id: EnrollmentState.find_by(Name: "Active").id) }
+  scope :screening, lambda { where(enrollment_state_id: EnrollmentState.find_by(Name: "Screening").id) }
 
   def get_initial_status
     # The Espinita gem (which tracks updates to enrollment status) counts the
