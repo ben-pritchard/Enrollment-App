@@ -7,7 +7,8 @@ class EnrollmentState < ActiveRecord::Base
 
   def self.states
     # Ignore “Ready to Install”, “Clinician” and “Neuropsych” enrollment states
-    ignore_ids = [5, 6, 8]
+    ignore_ids = [EnrollmentState.find_by(Name: "Ready to install").id,
+                  EnrollmentState.find_by(Name: "Clinician").id, EnrollmentState.find_by(Name: "Neuropsych").id]
     self.where.not(id: ignore_ids)
   end
 end
