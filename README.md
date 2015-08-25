@@ -12,16 +12,18 @@ Additional features:
 
 #Setup Instructions
 
+Check out the [live site](https://sheltered-eyrie-5331.herokuapp.com).
+
+Or in your local environment:
+
 Once you have your Ruby and Rails environments set up (which you can find details for here: http://guides.rubyonrails.org/getting_started.html) and your MySQL server running (which you can find details for here: https://dev.mysql.com/doc/refman/5.5/en/windows-server-first-start.html), then:
 
 1. Run `rake db:create` (in your command line)
 2. Run `rake db:seed` (without the "migrate" folder in the project)
-3. Run `rake db:migrate`
+3. Run `rake db:migrate` (with the "migrate" folder added back into the project)
 4. Run `rails s` in your console
 5. Go to "localhost:3000" in your browser
 6. To run tests, run `rspec`
-
-Or check out the live site [here.](https://sheltered-eyrie-5331.herokuapp.com/active)
 
 #Additional Features:
 
