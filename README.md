@@ -5,7 +5,7 @@ This is an app written with Ruby, Rails, and Javascript that manages a database 
 Integration tests are also included.
 
 Additional features:
-- Search feature - allows you to filter your list of enrollments based off of certain attributes
+- Search - allows you to filter your list of enrollments based off of certain attributes
 - Export - search results will be exported to a local CSV file.
 - Import - add or update enrollment records through an import of a CSV file.
 - Table sorting, pagination, etc.
